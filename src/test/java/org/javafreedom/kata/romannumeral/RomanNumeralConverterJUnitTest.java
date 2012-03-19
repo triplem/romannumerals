@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 /**
  *
  */
-public class RomanNumeralConverterTest {
+public class RomanNumeralConverterJUnitTest {
 
 	private RomanNumeralConverter romanNumeralConverter;
 
@@ -19,10 +19,20 @@ public class RomanNumeralConverterTest {
 	@Test
 	public void testConvert() {
 		int arabicNumber = 1990;
-		
 		String romanNumeral = romanNumeralConverter.convert(arabicNumber);
-
 		assertEquals("MCMXC", romanNumeral);
+
+		arabicNumber = 980;
+		romanNumeral = romanNumeralConverter.convert(arabicNumber);
+		assertEquals("CMLXXX", romanNumeral);
+
+		arabicNumber = 70;
+		romanNumeral = romanNumeralConverter.convert(arabicNumber);
+		assertEquals("LXX", romanNumeral);
+
+		arabicNumber = 4;
+		romanNumeral = romanNumeralConverter.convert(arabicNumber);
+		assertEquals("IV", romanNumeral);
 	}
 
 }
