@@ -68,6 +68,7 @@
 
   <build>
     <plugins>
+      <!-- Spock -->
       <plugin>
         <groupId>org.codehaus.gmaven</groupId>
         <artifactId>gmaven-plugin</artifactId>
@@ -98,12 +99,26 @@
           <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>1.7.5</version>
+            <version>${groovy.version}</version>
           </dependency>
         </dependencies>
       </plugin>
+
     </plugins>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </reporting>
 
   <profiles>
     <profile>
@@ -122,6 +137,7 @@
     <junit.version>4.10</junit.version>
     <slf4j.version>1.6.4</slf4j.version>
     <log4j.version>1.2.16</log4j.version>
-    <spock.version>0.5-groovy-1.7</spock.version>
+    <spock.version>0.6-groovy-1.8</spock.version>
+    <groovy.version>1.8.6</groovy.version>
   </properties>
 </project>
